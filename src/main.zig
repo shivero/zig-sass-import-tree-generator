@@ -69,7 +69,7 @@ pub fn TryOpenFile(basePath: []const u8, fileName: []u8) !void {
         }
     } else |err| switch (err) {
         error.FileNotFound => {
-            std.log.info("File not Found at path:, {s}", .{pathWithCwd});
+            std.log.info("File not Found at path :, {s}", .{pathWithCwd});
             const underscored = try std.fmt.allocPrint(allocator, "_{s}", .{fileName});
             try TryOpenFile(basePath, underscored);
         },
